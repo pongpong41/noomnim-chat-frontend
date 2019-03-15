@@ -1,0 +1,4 @@
+<p>Login</p>
+Name: <input type="text" [(ngModel)]="name" (keyup.enter)="onLogin()">
+<button (click)="onLogin()">Login</button>
+{{error}}
