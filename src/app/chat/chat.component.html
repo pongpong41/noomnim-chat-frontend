@@ -1,3 +1,13 @@
-<p>
-  chat works!
-</p>
+<p>Chat</p>
+<div>
+  <p>New Group</p>
+  Name: <input type="text" [(ngModel)]="name" (keyup.enter)="onCreateGroup()">
+  <button (click)="onCreateGroup()">Create</button>
+</div>
+<div>
+    <p>Search Group</p>
+    <input type="text" [(ngModel)]="keys" (keyup.enter)="onSearchGroup()">
+    <button (click)="onSearchGroup()">Search</button>
+  </div>
+{{groupName}}
+{{error}}
