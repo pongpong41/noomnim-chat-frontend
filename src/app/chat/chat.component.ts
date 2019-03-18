@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GroupService } from '../group.service';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -12,7 +14,7 @@ export class ChatComponent implements OnInit {
   keys = '';
   group = {};
 
-  constructor(private groupService: GroupService, private router: Router) { }
+  constructor(private groupService: GroupService, private router: Router, public userService: UserService) { }
 
   ngOnInit() {
     // this.groupService.getGroup('a').subscribe((data) => this.group = data);
