@@ -3,6 +3,7 @@ import { Socket } from 'ngx-socket-io';
 import { Group } from './group';
 import { SocketResponse } from './response';
 import { HttpClient } from '@angular/common/http';
+import { Groups } from './groups';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,6 @@ export class GroupService {
   }
 
   getGroup(keys: string) {
-    return this.http.get('http://localhost:3000/group?keys=' + keys);
+    return this.http.get<Groups>('http://localhost:3000/group?keys=' + keys);
   }
 }

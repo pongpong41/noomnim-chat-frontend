@@ -1,17 +1,14 @@
-<p>Chat</p>
-<h1>User</h1>
-<p>{{userService.user.name}}</p>
+<h2>Chatroom</h2>
+<h1>User  {{userService.user.name}}</h1>
 {{error}}
 <div>
-  <p>New Group</p>
-  Name: <input type="text" [(ngModel)]="name" (keyup.enter)="onCreateGroup()">
+  New Group: <input type="text" [(ngModel)]="name" (keyup.enter)="onCreateGroup()">
   <button (click)="onCreateGroup()">Create</button>
 </div>
 <div>
-  <p>Search Group</p>
-  <input type="text" [(ngModel)]="keys" (keyup.enter)="onSearchGroup()">
+  Search Group <input type="text" [(ngModel)]="keys" (keyup.enter)="onSearchGroup()">
   <button (click)="onSearchGroup()">Search</button>
 </div>
 <h2>Groups</h2>
-<p *ngFor="let group of userService.groups">{{group.name}}</p>
-<h2>Chatroom</h2>
+<p *ngFor="let group of groups">{{group.name}}</p>
+
