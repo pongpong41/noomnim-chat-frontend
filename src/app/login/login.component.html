@@ -1,13 +1,11 @@
-<div class="container">
-  <div class="card">
-    <h1>Login</h1>
-    <h3>Noomnim Chat</h3>
+<div class="card">
+  <h1>Login</h1>
+  <h3>Noomnim Chat</h3>
 
-    {{error}}
-    <mat-form-field class="spacing">
-      <input matInput placeholder="Name" id="username" [(ngModel)]="name" (keyup.enter)="onLogin()" required>
-    </mat-form-field>
+  {{error}}
+  <mat-form-field class="spacing">
+    <input matInput placeholder="Name" id="username" [(ngModel)]="name" (keyup.enter)="onLogin()" required>
+  </mat-form-field>
 
-    <button mat-raised-button class="btn spacing" (click)="onLogin()">Sign In</button>
-  </div>
+  <button mat-raised-button color="primary" class="btn spacing" (click)="onLogin()">Sign In</button>
 </div>
