@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+  max-width: 360px;
+  width: 100%;
+  padding: 56px 80px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 4px 7px 8px rgba(0, 0, 0, 0.25);
+}
+
+h1, h3 {
+  margin-top: 0;
+}
+
+.spacing {
+  margin-top: 12px;
+  width: 100%;
+}
+
+.btn {
+  padding: 4px 16px;
+  text-transform: uppercase;
+  background: #0288d1;
+  color: #ffffff;
+}
