@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GroupService } from '../group.service';
 import { UserService } from '../user.service';
-import { Groups } from '../groups';
+import { Group } from '../group';
 
 @Component({
   selector: 'app-chat',
@@ -12,7 +12,7 @@ export class ChatComponent implements OnInit {
   name = '';
   error = '';
   keys = '';
-  groups?: {};
+  groups?: Group[];
 
   constructor(private groupService: GroupService, public userService: UserService) { }
 
@@ -24,6 +24,7 @@ export class ChatComponent implements OnInit {
     this.error = '';
     this.groupService.createGroup(this.name);
     this.groupService.createGroupRes.subscribe(msg => {
+      console.log(msg);
       if (msg.data) {
         // this.router.navigate(['group']);
       } else {

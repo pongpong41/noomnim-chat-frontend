@@ -1,9 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import { Group } from './group';
-import { SocketResponse } from './response';
-import { HttpClient } from '@angular/common/http';
-import { Groups } from './groups';
+import { SocketResponse, HTTPResponse } from './response';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,7 @@ export class GroupService {
 
   }
 
-  getGroup(keys: string) {
-    return this.http.get<Groups>('http://localhost:3000/group?keys=' + keys);
+  getGroup(keys: string): Observable<HTTPResponse<Group[]>> {
+    return this.http.get<HTTPResponse<Group[]>>('http://localhost:3000/group?keys=' + keys);
   }
 }
