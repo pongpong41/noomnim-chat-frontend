@@ -21,7 +21,8 @@ export class SearchComponent implements OnInit {
 
   onCreateGroup() {
     this.error = '';
-    this.groupService.createGroup(this.name);
+    if(this.name == '') alert('Please input group name.')
+    else this.groupService.createGroup(this.name)
     this.groupService.createGroupRes.subscribe(msg => {
       if (msg.data) {
         this.userService.groupUpdate();
