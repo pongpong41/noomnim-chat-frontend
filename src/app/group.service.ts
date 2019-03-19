@@ -11,12 +11,12 @@ import { UserService } from './user.service';
 })
 export class GroupService {
   createGroupRes = this.socket.fromEvent<SocketResponse>('create-group');
-  group?: Group;
+  currentGroup?: Group;
 
   constructor(private socket: Socket, private http: HttpClient, private userService: UserService) {
     this.createGroupRes.subscribe(msg => {
       if (msg.data) {
-        this.group = msg.data;
+        this.currentGroup = msg.data;
       }
     });
   }
