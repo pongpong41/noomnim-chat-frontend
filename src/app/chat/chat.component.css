@@ -36,16 +36,6 @@
   font-weight: bold;
 }
 
-.grid-container {
-  display: grid;
-  grid-column-gap: 0px;
-  grid-template-columns: auto auto auto auto;
-  grid-template-columns: auto auto auto;
-  width: 100vw;
-  height: 94vh;
-  margin-top: 6vh;
-}
-
 app-chat-group{
   grid-row-start: 1;
   grid-row-end: 3;
@@ -61,25 +51,4 @@ app-chat-message{
 app-chat-search{
   grid-row-start: 3;
   grid-row-end: 4;
-}
-
-.container{
-  height: 100%;
-}
-
-.section-header{
-  margin: 0;
-  padding: 5px 10px;
-  font-weight: bold;
-}
-
-.group-component{
-  padding: 15px 10px;
-  border-style: solid;
-  border-width: 0px 0px 1px 0px;
-  border-color: #333;
-}
-
-.list-container{
-  overflow: scroll;
 }

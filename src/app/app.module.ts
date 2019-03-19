@@ -11,9 +11,10 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserService } from './user.service';
 import { ChatComponent } from './chat/chat.component';
-import { MessageComponent } from './chat/message.component';
-import { SearchComponent } from './chat/search.component';
-import { GroupComponent } from './chat/group.component';
+import { MessageComponent } from './chat/message/message.component';
+import { SearchComponent } from './chat/search/search.component';
+import { GroupComponent } from './chat/group/group.component';
+import { GroupService } from './group.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { GroupComponent } from './chat/group.component';
     HttpClientModule
   ],
   providers: [
-    UserService
+    UserService,
+    GroupService,
   ],
   bootstrap: [AppComponent]
 })
