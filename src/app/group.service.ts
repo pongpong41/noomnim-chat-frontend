@@ -29,8 +29,8 @@ export class GroupService {
 
   }
 
-  leaveGroup() {
-
+  leaveGroup(clientId: number, groupId: number) {
+    this.socket.emit('leave-group', { clientId, groupId});
   }
 
   getGroup(keys: string): Observable<HTTPResponse<Group[]>> {

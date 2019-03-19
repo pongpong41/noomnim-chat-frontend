@@ -3,7 +3,10 @@
   <div class="list-container">
       <mat-list>
           <div class="group-item" *ngFor="let group of userService.groups" (click)="onSelectGroup(group)">
-            <mat-list-item class="group">{{group.name}}</mat-list-item>
+            <mat-list-item class="group">
+              {{group.name}}
+              <button mat-button color="warn" (click)="onLeaveGroup(group)">X</button>
+            </mat-list-item>
             <mat-divider></mat-divider>
           </div>
         </mat-list>
