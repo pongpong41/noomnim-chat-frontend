@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Group } from '../group';
-import { GroupService } from '../group.service';
+import { Group } from '../../group';
+import { GroupService } from '../../group.service';
 
 @Component({
   selector: 'app-chat-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css', './chat.component.css']
+  styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
   name = '';
