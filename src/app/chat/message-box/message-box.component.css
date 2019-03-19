@@ -1,0 +1,13 @@
+.container {
+  position: relative;
+}
+.no-group {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 28px;
+  font-weight: bold;
+}

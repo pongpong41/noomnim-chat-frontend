@@ -3,7 +3,6 @@ import { Socket } from 'ngx-socket-io';
 import { User } from './user';
 import { SocketResponse, HTTPResponse } from './response';
 import { Group } from './group';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
