@@ -1,7 +1,11 @@
 <mat-list class="container groups">
   <p class="section-header">Groups</p>
-  <div *ngFor="let group of userService.groups">
-    <mat-list-item>{{group.name}}</mat-list-item>
-    <mat-divider></mat-divider>
-  </div>
+  <div class="list-container">
+      <mat-list>
+          <div *ngFor="let group of userService.groups">
+            <mat-list-item class="group">{{group.name}}</mat-list-item>
+            <mat-divider></mat-divider>
+          </div>
+        </mat-list>
+    </div>
 </mat-list>

@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
     this.error = '';
     this.groupService.createGroup(this.name);
     this.groupService.createGroupRes.subscribe(msg => {
-      console.log(msg);
+      // console.log(msg);
       if (msg.data) {
         // this.router.navigate(['group']);
       } else {
