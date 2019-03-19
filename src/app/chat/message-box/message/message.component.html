@@ -1,6 +1,4 @@
 <div class="message" [class.owner]="isOwner">
-  <div class="client-label">{{clientName}}</div>
-  <div class="message-content">
-    {{content}}
-  </div>
+  <div class="client-label">{{message.posted_by.name}}</div>
+  <div class="message-content" [matTooltip]="message.time | time">{{message.content}}</div>
 </div>

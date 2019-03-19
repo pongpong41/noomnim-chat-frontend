@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Message } from 'src/app/message';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-message',
@@ -8,13 +10,11 @@ import { Component, Input } from '@angular/core';
 export class MessageComponent {
 
   @Input()
-  clientName: string;
+  message: Message;
 
-  @Input()
-  content: string;
+  constructor(private userService: UserService) { }
 
-  @Input()
-  isOwner: boolean;
-
-  constructor() { }
+  get isOwner(): boolean {
+    return this.message.posted_by.id === this.userService.user.id;
+  }
 }

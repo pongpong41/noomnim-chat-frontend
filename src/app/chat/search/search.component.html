@@ -6,7 +6,10 @@
   <div class="list-container">
     <mat-list>
         <div *ngFor="let group of groups">
-          <mat-list-item class="group">{{group.name}}</mat-list-item>
+          <mat-list-item class="group">
+              <p mat-line>{{group.name}}</p>
+              <button mat-stroked-button (click)="onJoinGroup(group.id)">Join</button>
+          </mat-list-item>
           <mat-divider></mat-divider>
         </div>
       </mat-list>
