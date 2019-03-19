@@ -37,8 +37,8 @@ export class GroupService {
     this.socket.emit('join-group', {clientId, groupId});
   }
 
-  leaveGroup() {
-
+  leaveGroup(clientId: number, groupId: number) {
+    this.socket.emit('leave-group', { clientId, groupId});
   }
 
   getGroup(keys: string): Observable<HTTPResponse<Group[]>> {
