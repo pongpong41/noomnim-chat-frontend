@@ -24,6 +24,11 @@ export class ChatService {
           if (!repeatedMessage) {
             this.messages.push(response.data);
             this.messages.sort((a, b) => a.id - b.id);
+            this.socket.emit('message-ack', {
+              clientId: this.userService.user.id,
+              groupId: this.currentGroup.id,
+              messageId: this.messages[this.messages.length - 1].id
+            });
           }
         }
       }
