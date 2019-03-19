@@ -16,11 +16,6 @@ export class GroupService {
   currentGroup?: Group;
 
   constructor(private socket: Socket, private http: HttpClient, private userService: UserService, private chatService: ChatService) {
-    this.createGroupRes.subscribe(msg => {
-      if (msg.data) {
-        this.chatService.setCurrentGroup(msg.data);
-      }
-    });
     this.joinGroupRes.subscribe(msg => {
       if (msg.data) {
         this.currentGroup = msg.data.group;
