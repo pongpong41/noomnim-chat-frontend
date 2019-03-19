@@ -14,7 +14,16 @@ export class SearchComponent implements OnInit {
   keys = '';
   groups?: Group[];
 
-  constructor(private groupService: GroupService, private userService: UserService) { }
+  constructor(private groupService: GroupService, private userService: UserService) {
+    this.groupService.createGroupRes.subscribe(msg => {
+      if (msg.data) {
+        this.userService.groupUpdate();
+        this.groupService.currentGroup = msg.data;
+      } else {
+        this.error = msg.error;
+      }
+    });
+  }
 
   ngOnInit() {
   }
@@ -22,13 +31,6 @@ export class SearchComponent implements OnInit {
   onCreateGroup() {
     this.error = '';
     this.groupService.createGroup(this.name);
-    this.groupService.createGroupRes.subscribe(msg => {
-      if (msg.data) {
-        this.userService.groupUpdate();
-      } else {
-        this.error = msg.error;
-      }
-    });
   }
 
   onSearchGroup() {

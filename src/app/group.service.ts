@@ -13,13 +13,7 @@ export class GroupService {
   createGroupRes = this.socket.fromEvent<SocketResponse>('create-group');
   currentGroup?: Group;
 
-  constructor(private socket: Socket, private http: HttpClient, private userService: UserService) {
-    this.createGroupRes.subscribe(msg => {
-      if (msg.data) {
-        this.currentGroup = msg.data;
-      }
-    });
-  }
+  constructor(private socket: Socket, private http: HttpClient, private userService: UserService) { }
 
   createGroup(name: string) {
     this.socket.emit('create-group', { name, clientId: this.userService.user.id });
