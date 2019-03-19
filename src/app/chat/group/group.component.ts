@@ -13,7 +13,15 @@ import { SocketResponse } from 'src/app/response';
 export class GroupComponent implements OnInit {
   error = '';
   leaveGroupRes = this.socket.fromEvent<SocketResponse>('leave-group');
-  constructor(public userService: UserService, private groupService: GroupService, private socket: Socket) { }
+  constructor(public userService: UserService, private groupService: GroupService, private socket: Socket) {
+    this.leaveGroupRes.subscribe(msg => {
+      if (msg.data) {
+        this.userService.groupUpdate();
+      } else {
+        this.error = msg.error;
+      }
+    });
+  }
 
   ngOnInit() {
   }
@@ -25,13 +33,8 @@ export class GroupComponent implements OnInit {
   onLeaveGroup(group: Group) {
     this.error = '';
     this.groupService.leaveGroup(this.userService.user.id, group.id);
-    this.leaveGroupRes.subscribe(msg => {
-      if (msg.data) {
-        this.userService.groupUpdate();
-        this.groupService.currentGroup = null;
-      } else {
-        this.error = msg.error;
-      }
-    });
+    if (this.groupService.currentGroup === group) {
+      this.groupService.currentGroup = null;
+    }
   }
 }
