@@ -1,14 +1,14 @@
-<h2>Chatroom</h2>
-<h1>User  {{userService.user.name}}</h1>
+<div class="header-nav">
+  <div>
+    <div id="title">Chatroom</div>
+    <div id="nav-user-info">
+      User <span id="nav-user-name">{{userService.user.name}}</span>
+    </div>
+  </div>
+</div>
 {{error}}
-<div>
-  New Group: <input type="text" [(ngModel)]="name" (keyup.enter)="onCreateGroup()">
-  <button (click)="onCreateGroup()">Create</button>
+<div class="grid-container">
+  <app-chat-group></app-chat-group>
+  <app-chat-message></app-chat-message>
+  <app-chat-search></app-chat-search>
 </div>
-<div>
-  Search Group <input type="text" [(ngModel)]="keys" (keyup.enter)="onSearchGroup()">
-  <button (click)="onSearchGroup()">Search</button>
-</div>
-<h2>Groups</h2>
-<p *ngFor="let group of groups">{{group.name}}</p>
-
