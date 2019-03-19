@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatListModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatListModule, MatTooltipModule } from '@angular/material';
 import { SocketIoModule } from 'ngx-socket-io';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -18,6 +18,7 @@ import { NewMessageComponent } from './chat/message-box/new-message/new-message.
 import { ChatService } from './chat.service';
 import { MessageBoxComponent } from './chat/message-box/message-box.component';
 import { MessageComponent } from './chat/message-box/message/message.component';
+import { TimePipe } from './time.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MessageComponent } from './chat/message-box/message/message.component';
     MessageBoxComponent,
     SearchComponent,
     NewMessageComponent,
-    MessageComponent
+    MessageComponent,
+    TimePipe
   ],
   imports: [
     AppRoutingModule,
@@ -38,6 +40,7 @@ import { MessageComponent } from './chat/message-box/message/message.component';
     MatFormFieldModule,
     MatListModule,
     MatInputModule,
+    MatTooltipModule,
     SocketIoModule.forRoot({ url: 'http://localhost:3000' }),
     FormsModule,
     HttpClientModule

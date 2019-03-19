@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GroupService } from 'src/app/group.service';
 import { UserService } from 'src/app/user.service';
+import { ChatService } from 'src/app/chat.service';
 
 @Component({
   selector: 'app-message-box',
@@ -9,6 +10,6 @@ import { UserService } from 'src/app/user.service';
 })
 export class MessageBoxComponent {
 
-  constructor(public userService: UserService, public groupService: GroupService) { }
+  constructor(public userService: UserService, public chatService: ChatService) { }
 
 }

@@ -5,18 +5,18 @@ import { Group } from './group';
 import { SocketResponse, HTTPResponse } from './response';
 import { Observable } from 'rxjs';
 import { UserService } from './user.service';
+import { ChatService } from './chat.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GroupService {
   createGroupRes = this.socket.fromEvent<SocketResponse>('create-group');
-  currentGroup?: Group;
 
-  constructor(private socket: Socket, private http: HttpClient, private userService: UserService) {
+  constructor(private socket: Socket, private http: HttpClient, private userService: UserService, private chatService: ChatService) {
     this.createGroupRes.subscribe(msg => {
       if (msg.data) {
-        this.currentGroup = msg.data;
+        this.chatService.setCurrentGroup(msg.data);
       }
     });
   }

@@ -1,25 +1,10 @@
 <div class="container search">
-  <div *ngIf="!groupService.currentGroup" class="no-group">
+  <div *ngIf="!chatService.currentGroup" class="no-group">
     No group selected
   </div>
-  <div *ngIf="groupService.currentGroup" class="group-message">
-    <p class="section-header">{{groupService.currentGroup.name}}</p>
-    <app-message [clientName]="'You'" [content]="'Hello'" [isOwner]="true"></app-message>
-    <app-message [clientName]="'Me'" [content]="'How are you?'" [isOwner]="false"></app-message>
-    <app-message [clientName]="'You'" [content]="'Fine'" [isOwner]="true"></app-message>
-    <!-- {{error}}
-      <div class="list-container">
-        <mat-list>
-          <div *ngFor="let message of messages">
-            <mat-list-item class="message">{{message.name}}</mat-list-item>
-            <mat-divider></mat-divider>
-          </div>
-        </mat-list>
-      </div> -->
-    <!-- <mat-form-field class="spacing">
-        <input matInput placeholder="New Message" id="new-message" [(ngModel)]="name" (keyup.enter)="onCreateMessage()">
-      </mat-form-field>
-      <button mat-raised-button class="btn spacing" (click)="onCreateMessage()">Send</button> -->
+  <div *ngIf="chatService.currentGroup" class="group-message">
+    <p class="section-header">{{chatService.currentGroup.name}}</p>
+    <app-message *ngFor="let message of chatService.filterMessage(chatService.currentGroup.id)" [message]="message"></app-message>
     <app-new-message></app-new-message>
   </div>
 </div>

@@ -1,7 +1,9 @@
+import { User } from './user';
+
 export class Message {
   id: number;
   time: string;
   content: string;
-  postedBy: number;
-  groupId: number;
+  posted_by: User;
+  group_id: number;
 }

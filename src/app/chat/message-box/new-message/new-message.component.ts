@@ -15,6 +15,7 @@ export class NewMessageComponent implements OnInit {
   }
 
   onEnter() {
+    if (this.message.trim().length === 0) { return; }
     this.chat.sendMessage(this.message).subscribe(response => {
       if (response.data) {
         this.message = '';
