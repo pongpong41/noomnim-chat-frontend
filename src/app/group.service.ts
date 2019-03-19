@@ -13,12 +13,11 @@ import { ChatService } from './chat.service';
 export class GroupService {
   createGroupRes = this.socket.fromEvent<SocketResponse>('create-group');
   joinGroupRes = this.socket.fromEvent<SocketResponse>('join-group');
-  currentGroup?: Group;
 
   constructor(private socket: Socket, private http: HttpClient, private userService: UserService, private chatService: ChatService) {
     this.joinGroupRes.subscribe(msg => {
       if (msg.data) {
-        this.currentGroup = msg.data.group;
+        this.chatService.setCurrentGroup(msg.data.group);
       }
     });
   }
