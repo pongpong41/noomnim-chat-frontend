@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import { User } from './user';
-import { SocketResponse } from './response';
+import { SocketResponse, HTTPResponse } from './response';
 import { Group } from './group';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class UserService {
   user?: User;
   groups?: Group[];
 
-  constructor(private socket: Socket) {
+  constructor(private socket: Socket, private http: HttpClient) {
     this.createClient.subscribe(msg => {
       if (msg.data) {
         this.user = msg.data.client;
@@ -27,5 +29,11 @@ export class UserService {
 
   logout() {
     this.user = undefined;
+  }
+
+  groupUpdate() {
+    this.http.get<HTTPResponse<Group[]>>('http://localhost:3000/user/group?clientId=' + this.user.id).subscribe((res) => {
+      this.groups = res.data;
+    });
   }
 }

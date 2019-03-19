@@ -22,7 +22,7 @@ export class GroupService {
   }
 
   createGroup(name: string) {
-    this.socket.emit('create-group', name);
+    this.socket.emit('create-group', { name, clientId: this.userService.user.id });
   }
 
   joinGroup(groupId: number) {
