@@ -37,8 +37,14 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  onJoinGroup(groupId) {
+  onJoinGroup(groupId: number) {
     this.groupService.joinGroup(groupId);
-    this.userService.groupUpdate();
+    this.groupService.joinGroupRes.subscribe(msg => {
+      if(msg.data) {
+        this.userService.groupUpdate();
+      } else {
+        this.error = msg.error;
+      }
+    })
   }
 }
