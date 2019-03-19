@@ -1,0 +1,18 @@
+<div class="container search">
+  {{error}}
+  <mat-form-field class="spacing">
+    <input matInput placeholder="Search" id="search" [(ngModel)]="keys" (keyup.enter)="onSearchGroup()">
+  </mat-form-field>
+  <div class="list-container">
+    <mat-list>
+        <div *ngFor="let group of groups">
+          <mat-list-item class="group">{{group.name}}</mat-list-item>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-list>
+  </div>
+  <mat-form-field class="spacing">
+      <input matInput placeholder="New Group" id="new-group" [(ngModel)]="name" (keyup.enter)="onCreateGroup()">
+  </mat-form-field>
+  <button mat-raised-button class="btn spacing" (click)="onCreateGroup()">Create New Group</button>
+</div>

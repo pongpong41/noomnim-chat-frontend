@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-chat',
-  templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  selector: 'app-chat-group',
+  templateUrl: './group.component.html',
+  styleUrls: ['./group.component.css', './chat.component.css']
 })
-export class ChatComponent implements OnInit {
+export class GroupComponent implements OnInit {
 
   constructor(public userService: UserService) { }
 

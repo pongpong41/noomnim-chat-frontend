@@ -1,3 +1,14 @@
-<p>
-  chat works!
-</p>
+<div class="header-nav">
+  <div>
+    <div id="title">Chatroom</div>
+    <div id="nav-user-info">
+      User <span id="nav-user-name">{{userService.user.name}}</span>
+    </div>
+  </div>
+</div>
+{{error}}
+<div class="grid-container">
+  <app-chat-group></app-chat-group>
+  <app-chat-message></app-chat-message>
+  <app-chat-search></app-chat-search>
+</div>
