@@ -1,3 +1,12 @@
-.container{
-  background-color: #ccc;
+.container {
+  background-color: #ddd;
+}
+
+.group-item {
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.group-item:hover {
+  background-color: rgba(117, 223, 255, 0.2);
 }

@@ -1,9 +1,3 @@
 .container{
-  background-color: #888;
-}
-
-mat-list{
-  position: relative;
-  width: 100%;
-  height: 100%;
+  background-color: #bbb;
 }

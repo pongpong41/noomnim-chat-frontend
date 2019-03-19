@@ -1,5 +1,5 @@
 <div class="container search">
-  <p class="section-header">Message</p>
+  <p class="section-header">{{groupName}}</p>
   <!-- {{error}}
   <div class="list-container">
     <mat-list>
@@ -13,4 +13,5 @@
       <input matInput placeholder="New Message" id="new-message" [(ngModel)]="name" (keyup.enter)="onCreateMessage()">
   </mat-form-field>
   <button mat-raised-button class="btn spacing" (click)="onCreateMessage()">Send</button> -->
+  <app-new-message></app-new-message>
 </div>

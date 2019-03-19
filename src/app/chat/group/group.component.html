@@ -2,7 +2,7 @@
   <p class="section-header">Groups</p>
   <div class="list-container">
       <mat-list>
-          <div *ngFor="let group of userService.groups">
+          <div class="group-item" *ngFor="let group of userService.groups" (click)="onSelectGroup(group)">
             <mat-list-item class="group">{{group.name}}</mat-list-item>
             <mat-divider></mat-divider>
           </div>
