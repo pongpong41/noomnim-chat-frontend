@@ -36,4 +36,8 @@ export class SearchComponent implements OnInit {
       this.groups = res.data;
     });
   }
+
+  onJoinGroup(groupId) {
+    this.groupService.joinGroup(groupId);
+  }
 }

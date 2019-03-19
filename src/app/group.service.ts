@@ -4,6 +4,7 @@ import { Socket } from 'ngx-socket-io';
 import { Group } from './group';
 import { SocketResponse, HTTPResponse } from './response';
 import { Observable } from 'rxjs';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class GroupService {
   createGroupRes = this.socket.fromEvent<SocketResponse>('create-group');
   group?: Group;
 
-  constructor(private socket: Socket, private http: HttpClient) {
+  constructor(private socket: Socket, private http: HttpClient, private userService: UserService) {
     this.createGroupRes.subscribe(msg => {
       if (msg.data) {
         this.group = msg.data;
@@ -24,8 +25,9 @@ export class GroupService {
     this.socket.emit('create-group', name);
   }
 
-  joinGroup() {
-
+  joinGroup(groupId: number) {
+    const clientName = this.userService.user.name;
+    this.socket.emit('join-group', {clientName, groupId});
   }
 
   leaveGroup() {
