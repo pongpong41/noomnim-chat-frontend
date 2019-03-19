@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
 })
 export class GroupService {
   createGroupRes = this.socket.fromEvent<SocketResponse>('create-group');
-  group?: Group;
+  currentGroup?: Group;
 
   constructor(private socket: Socket, private http: HttpClient) {
     this.createGroupRes.subscribe(msg => {
       if (msg.data) {
-        this.group = msg.data;
+        this.currentGroup = msg.data;
       }
     });
   }

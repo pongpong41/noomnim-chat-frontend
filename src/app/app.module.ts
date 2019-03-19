@@ -15,6 +15,8 @@ import { MessageComponent } from './chat/message/message.component';
 import { SearchComponent } from './chat/search/search.component';
 import { GroupComponent } from './chat/group/group.component';
 import { GroupService } from './group.service';
+import { NewMessageComponent } from './chat/message/new-message/new-message.component';
+import { ChatService } from './chat.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { GroupService } from './group.service';
     ChatComponent,
     GroupComponent,
     MessageComponent,
-    SearchComponent
+    SearchComponent,
+    NewMessageComponent
   ],
   imports: [
     AppRoutingModule,
@@ -40,6 +43,7 @@ import { GroupService } from './group.service';
   providers: [
     UserService,
     GroupService,
+    ChatService
   ],
   bootstrap: [AppComponent]
 })
