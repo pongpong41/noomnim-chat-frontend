@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
 import { Group } from '../../group';
 import { GroupService } from 'src/app/group.service';
+import { Socket } from 'ngx-socket-io';
+import { SocketResponse } from 'src/app/response';
 
 @Component({
   selector: 'app-chat-group',
@@ -9,13 +11,30 @@ import { GroupService } from 'src/app/group.service';
   styleUrls: ['./group.component.css']
 })
 export class GroupComponent implements OnInit {
-
-  constructor(public userService: UserService, private groupService: GroupService) { }
+  error = '';
+  leaveGroupRes = this.socket.fromEvent<SocketResponse>('leave-group');
+  constructor(public userService: UserService, private groupService: GroupService, private socket: Socket) {
+    this.leaveGroupRes.subscribe(msg => {
+      if (msg.data) {
+        this.userService.groupUpdate();
+      } else {
+        this.error = msg.error;
+      }
+    });
+  }
 
   ngOnInit() {
   }
 
   onSelectGroup(group: Group) {
     this.groupService.currentGroup = group;
+  }
+
+  onLeaveGroup(group: Group) {
+    this.error = '';
+    this.groupService.leaveGroup(this.userService.user.id, group.id);
+    if (this.groupService.currentGroup === group) {
+      this.groupService.currentGroup = null;
+    }
   }
 }
