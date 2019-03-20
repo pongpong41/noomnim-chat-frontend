@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GroupService } from 'src/app/group.service';
 import { UserService } from 'src/app/user.service';
 import { ChatService } from 'src/app/chat.service';
 

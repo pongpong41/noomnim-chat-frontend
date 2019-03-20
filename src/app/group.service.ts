@@ -6,6 +6,7 @@ import { SocketResponse, HTTPResponse } from './response';
 import { Observable } from 'rxjs';
 import { UserService } from './user.service';
 import { ChatService } from './chat.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +37,6 @@ export class GroupService {
   }
 
   getGroup(keys: string): Observable<HTTPResponse<Group[]>> {
-    return this.http.get<HTTPResponse<Group[]>>('http://localhost:3000/group?keys=' + keys);
+    return this.http.get<HTTPResponse<Group[]>>(environment.apiUrl + '/group?keys=' + keys);
   }
 }
