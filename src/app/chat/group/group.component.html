@@ -1,16 +1,14 @@
+<app-section-header title="My Groups"></app-section-header>
 <mat-list class="container groups">
-  <p class="section-header">My Groups</p>
-  <div class="list-container">
-    <mat-list>
-      <div class="group-item" *ngFor="let group of userService.groups" [ngClass]="groupStyle(group.id)">
-        <mat-list-item (click)="onSelectGroup(group)">
-          <div class="group">
-            <div>{{group.name}}</div>
-            <button mat-button class="btn" (click)="onLeaveGroup(group)">X</button>
-          </div>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-      </div>
-    </mat-list>
-  </div>
+  <mat-list>
+    <div class="group-item" *ngFor="let group of userService.groups" [ngClass]="groupStyle(group.id)">
+      <mat-list-item (click)="onSelectGroup(group)">
+        <div class="group">
+          <div>{{group.name}}</div>
+          <button mat-button class="btn" (click)="onLeaveGroup(group)">X</button>
+        </div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-list>
 </mat-list>
