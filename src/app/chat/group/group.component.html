@@ -1,8 +1,8 @@
-<mat-list class="container groups">
-  <p class="section-header">Groups</p>
-  <div class="list-container">
+<div class="chat-group">
+  <app-section-header title="My Groups"></app-section-header>
+  <mat-list class="container groups">
     <mat-list>
-      <div class="group-item" *ngFor="let group of userService.groups">
+      <div class="group-item" *ngFor="let group of userService.groups" [ngClass]="groupStyle(group.id)">
         <mat-list-item (click)="onSelectGroup(group)">
           <div class="group">
             <div>{{group.name}}</div>
@@ -12,5 +12,5 @@
         <mat-divider></mat-divider>
       </div>
     </mat-list>
-  </div>
-</mat-list>
+  </mat-list>
+</div>

@@ -1,3 +1,9 @@
+.chat-group {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
 .container {
   background-color: #ffffff;
   width: 300px;
@@ -10,6 +16,10 @@
 }
 
 .group-item:hover {
+  background-color: #FFCED4;
+}
+
+.group-item.selected {
   background-color: #FFCED4;
 }
 
