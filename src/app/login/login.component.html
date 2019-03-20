@@ -4,7 +4,7 @@
 
   {{error}}
   <mat-form-field class="spacing">
-    <input matInput placeholder="Name" id="username" [(ngModel)]="name" (keyup.enter)="onLogin()" required>
+    <input matInput placeholder="Name" id="username" [(ngModel)]="name" (keyup.enter)="onLogin()" required autofocus>
   </mat-form-field>
 
   <button mat-raised-button class="btn spacing" (click)="onLogin()">Sign In</button>

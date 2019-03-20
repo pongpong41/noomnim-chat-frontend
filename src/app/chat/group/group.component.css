@@ -25,6 +25,7 @@
 }
 
 .btn {
+  min-width: auto;
   font-weight: bold;
   color: #fc687c;
 }
