@@ -16,3 +16,15 @@
 .section-header {
   text-align: center;
 }
+
+.group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.btn {
+  font-weight: bold;
+  color: #fc687c;
+}
