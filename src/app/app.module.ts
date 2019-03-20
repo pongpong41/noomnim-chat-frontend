@@ -23,6 +23,7 @@ import { MessageComponent } from './chat/message-box/message/message.component';
 import { TimePipe } from './time.pipe';
 import { environment } from 'src/environments/environment';
 import { SectionHeaderComponent } from './chat/section-header/section-header.component';
+import { ProfileImgComponent } from './profile-img/profile-img.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SectionHeaderComponent } from './chat/section-header/section-header.com
     NewMessageComponent,
     MessageComponent,
     SectionHeaderComponent,
-    TimePipe
+    TimePipe,
+    ProfileImgComponent
   ],
   imports: [
     AppRoutingModule,
