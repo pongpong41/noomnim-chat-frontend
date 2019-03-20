@@ -1,8 +1,20 @@
-$message-pad: 100px;
+$message-pad: 120px;
 
 .message {
   margin: 12px $message-pad 12px 0;
-  padding: 0 12px;
+  padding: 0 4px;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-img {
+  margin: 8px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.message-text {
+  flex-grow: 1;
 }
 
 .message-unread {
@@ -33,6 +45,7 @@ $message-pad: 100px;
 
 .message.owner {
   margin: 12px 0 12px $message-pad;
+  flex-direction: row-reverse;
   .client-label {
     text-align: right;
   }

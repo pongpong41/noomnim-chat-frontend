@@ -17,20 +17,20 @@
   font-size: large;
 }
 
-.header-nav div{
-  display: inline-block;
+app-profile-img {
+  margin: 8px;
 }
 
-#nav-user-name{
-  color: #0288d1;
-  font-weight: bold;
+.header-nav-right {
+  display: flex;
+  align-items: center;
 }
 
 mat-drawer-container {
   height: inherit;
 }
 
-mat-drawer{
+mat-drawer {
   overflow: auto;
 }
 
