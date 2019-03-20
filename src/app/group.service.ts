@@ -29,11 +29,11 @@ export class GroupService {
 
   joinGroup(groupId: number) {
     const clientId = this.userService.user.id;
-    this.socket.emit('join-group', {clientId, groupId});
+    this.socket.emit('join-group', { clientId, groupId });
   }
 
   leaveGroup(clientId: number, groupId: number) {
-    this.socket.emit('leave-group', { clientId, groupId});
+    this.socket.emit('leave-group', { clientId, groupId });
   }
 
   getGroup(keys: string): Observable<HTTPResponse<Group[]>> {
