@@ -1,6 +1,21 @@
+$message-pad: 100px;
+
 .message {
-  margin: 12px 60px 12px 0;
+  margin: 12px $message-pad 12px 0;
   padding: 0 12px;
+}
+
+.message-unread {
+  margin: 12px;
+  padding: 0;
+  text-align: center;
+  background-color: rgba(153, 153, 153, 0.15);
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, .1);
+}
+
+.unread-label {
+  color: rgba(153,153,153,0.9);
 }
 
 .client-label {
@@ -9,19 +24,21 @@
 }
 
 .message-content {
-  background-color: #eee;
+  background-color: #fff;
+  color: #5ba5a5;
   padding: 8px 8px 8px 20px;
   border-radius: 0 20px 20px 20px;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, .1);
 }
 
 .message.owner {
-  margin: 12px 0 12px 60px;
+  margin: 12px 0 12px $message-pad;
   .client-label {
     text-align: right;
   }
   .message-content {
     background-color: #dff4f9;
+    color: #333;
     border-radius: 20px 20px 0 20px;
   }
 }

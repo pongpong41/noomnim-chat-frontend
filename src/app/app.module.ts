@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatListModule, MatTooltipModule } from '@angular/material';
+import {
+  MatButtonModule, MatFormFieldModule, MatInputModule, MatListModule, MatSidenavModule, MatTooltipModule, MatIconModule
+} from '@angular/material';
 import { SocketIoModule } from 'ngx-socket-io';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -19,6 +21,8 @@ import { ChatService } from './chat.service';
 import { MessageBoxComponent } from './chat/message-box/message-box.component';
 import { MessageComponent } from './chat/message-box/message/message.component';
 import { TimePipe } from './time.pipe';
+import { environment } from 'src/environments/environment';
+import { SectionHeaderComponent } from './chat/section-header/section-header.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,7 @@ import { TimePipe } from './time.pipe';
     SearchComponent,
     NewMessageComponent,
     MessageComponent,
+    SectionHeaderComponent,
     TimePipe
   ],
   imports: [
@@ -39,9 +44,11 @@ import { TimePipe } from './time.pipe';
     MatButtonModule,
     MatFormFieldModule,
     MatListModule,
+    MatIconModule,
     MatInputModule,
     MatTooltipModule,
-    SocketIoModule.forRoot({ url: 'http://localhost:3000' }),
+    MatSidenavModule,
+    SocketIoModule.forRoot({ url: environment.apiUrl }),
     FormsModule,
     HttpClientModule
   ],

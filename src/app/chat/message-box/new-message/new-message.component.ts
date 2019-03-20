@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ChatService } from 'src/app/chat.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { ChatService } from 'src/app/chat.service';
 })
 export class NewMessageComponent implements OnInit {
   message = '';
+  @Output() newMessage = new EventEmitter<null>();
 
   constructor(private chat: ChatService) { }
 
@@ -17,6 +18,7 @@ export class NewMessageComponent implements OnInit {
   onEnter() {
     if (this.message.trim().length === 0) { return; }
     this.chat.sendMessage(this.message).subscribe(response => {
+      this.newMessage.emit(null);
       if (response.data) {
         this.message = '';
       }

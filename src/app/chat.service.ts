@@ -6,6 +6,7 @@ import { HTTPResponse, SocketResponse } from './response';
 import { Message } from './message';
 import { Observable } from 'rxjs';
 import { Group } from './group';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,7 @@ export class ChatService {
   }
 
   sendMessage(content: string): Observable<HTTPResponse<Message>> {
-    return this.http.post<HTTPResponse<Message>>('http://localhost:3000/message', {
+    return this.http.post<HTTPResponse<Message>>(environment.apiUrl + '/message', {
       content, clientId: this.userService.user.id, groupId: this.currentGroup.id
     });
   }
@@ -54,5 +55,14 @@ export class ChatService {
 
   getUnreadMessage(groupId: number) {
     this.socket.emit('get-unread', { clientId: this.userService.user.id, groupId });
+  }
+
+  clearUnreadMessage() {
+    if (this.currentGroup) {
+      this.messages = this.messages.filter(msg => (
+        msg.group_id !== this.currentGroup.id ||
+        (msg.group_id === this.currentGroup.id && Number.isInteger(msg.id))
+      ));
+    }
   }
 }

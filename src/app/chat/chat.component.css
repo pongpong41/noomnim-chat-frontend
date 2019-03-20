@@ -1,34 +1,24 @@
-
-.spacing {
-  padding: 10px;
-  width: 90%;
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 1100px;
 }
 
-.header-nav{
-  background: #444;
-  color: white;
-  position: fixed;
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  padding: 0 24px;
+  background: #B4E2E2;
   top: 0;
   left: 0;
-  width: -webkit-fill-available;
   font-size: large;
-  height: 6vh;
-  display: inline;
-  align-items: center;
 }
 
 .header-nav div{
   display: inline-block;
-}
-
-#title{
-  position: absolute;
-  left: 2%;
-}
-
-#nav-user-info{
-  position: absolute;
-  right: 2%;
 }
 
 #nav-user-name{
@@ -36,19 +26,14 @@
   font-weight: bold;
 }
 
-app-chat-group{
-  grid-row-start: 1;
-  grid-row-end: 3;
+mat-drawer-container {
+  height: inherit;
 }
 
-app-message-box {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 4;
+mat-drawer{
+  overflow: auto;
 }
 
-app-chat-search{
-  grid-row-start: 3;
-  grid-row-end: 4;
+.box {
+  min-width: 600px;
 }

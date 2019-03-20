@@ -1,5 +1,13 @@
+.chat-group {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
 .container {
-  background-color: #ddd;
+  background-color: #ffffff;
+  width: 300px;
+  box-sizing: border-box;
 }
 
 .group-item {
@@ -8,5 +16,26 @@
 }
 
 .group-item:hover {
-  background-color: rgba(117, 223, 255, 0.2);
+  background-color: #FFCED4;
+}
+
+.group-item.selected {
+  background-color: #FFCED4;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.btn {
+  min-width: auto;
+  font-weight: bold;
+  color: #fc687c;
 }

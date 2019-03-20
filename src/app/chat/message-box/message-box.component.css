@@ -1,6 +1,7 @@
 .container {
   position: relative;
 }
+
 .no-group {
   top: 50%;
   left: 50%;
@@ -10,4 +11,20 @@
   color: rgba(0, 0, 0, 0.25);
   font-size: 28px;
   font-weight: bold;
+  text-align: center;
+}
+
+.group-message {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 20px;
 }

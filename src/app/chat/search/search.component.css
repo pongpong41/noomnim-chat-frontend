@@ -1,3 +1,28 @@
 .container{
-  background-color: #bbb;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  box-sizing: border-box;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.line {
+  margin-top: 16px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.btn {
+  min-height: 36px;
+  background-color: #fc8f9d;
+  color: #fff;
+}
+
+.image-background {
+  position: absolute;
+  bottom: 20px;
+  width: 200px;
+  opacity: 0.8;
 }

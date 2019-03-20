@@ -25,4 +25,6 @@ h1, h3 {
 .btn {
   padding: 4px 16px;
   text-transform: uppercase;
+  background-color: #a3d1d1;
+  color: #ffffff
 }

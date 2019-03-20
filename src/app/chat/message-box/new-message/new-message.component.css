@@ -1,11 +1,11 @@
 .new-message {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #f0f0f0;
-  padding: 0 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 72px;
+  background-color: #FFCED4;
 }
+
 .message-field {
-  width: 100%;
+  width: 90%;
 }

@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
   constructor(private groupService: GroupService, private userService: UserService, private chatService: ChatService) {
     this.groupService.createGroupRes.subscribe(msg => {
       if (msg.data) {
+        this.name = '';
         this.userService.groupUpdate();
         this.chatService.setCurrentGroup(msg.data);
       } else {

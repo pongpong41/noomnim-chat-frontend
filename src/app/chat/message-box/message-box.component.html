@@ -1,10 +1,14 @@
-<div class="container search">
+<div class="container search" (click)="chatService.clearUnreadMessage()">
   <div *ngIf="!chatService.currentGroup" class="no-group">
     No group selected
   </div>
   <div *ngIf="chatService.currentGroup" class="group-message">
-    <p class="section-header">{{chatService.currentGroup.name}}</p>
-    <app-message *ngFor="let message of chatService.filterMessage(chatService.currentGroup.id)" [message]="message"></app-message>
-    <app-new-message></app-new-message>
+    <app-section-header [title]="chatService.currentGroup.name" rightIcon="close" (clickRightIcon)="onExitGroup()">
+    </app-section-header>
+    <div #scrollMe class="box">
+      <app-message *ngFor="let message of chatService.filterMessage(chatService.currentGroup.id)" [message]="message">
+      </app-message>
+    </div>
+    <app-new-message class="footer" (newMessage)="scrollToBottom()"></app-new-message>
   </div>
 </div>
