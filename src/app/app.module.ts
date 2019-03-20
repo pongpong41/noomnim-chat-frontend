@@ -19,6 +19,7 @@ import { ChatService } from './chat.service';
 import { MessageBoxComponent } from './chat/message-box/message-box.component';
 import { MessageComponent } from './chat/message-box/message/message.component';
 import { TimePipe } from './time.pipe';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { TimePipe } from './time.pipe';
     MatInputModule,
     MatTooltipModule,
     MatSidenavModule,
-    SocketIoModule.forRoot({ url: 'http://localhost:3000' }),
+    SocketIoModule.forRoot({ url: environment.apiUrl }),
     FormsModule,
     HttpClientModule
   ],
