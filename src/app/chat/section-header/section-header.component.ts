@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-section-header',
@@ -8,8 +8,27 @@ import { Component, Input } from '@angular/core';
 export class SectionHeaderComponent {
 
   @Input()
+  leftIcon: string;
+
+  @Input()
   title: string;
+
+  @Input()
+  rightIcon: string;
+
+  @Output()
+  clickLeftIcon = new EventEmitter();
+
+  @Output()
+  clickRightIcon = new EventEmitter();
 
   constructor() { }
 
+  onClickLeftIcon() {
+    this.clickLeftIcon.emit();
+  }
+
+  onClickRightIcon() {
+    this.clickRightIcon.emit();
+  }
 }

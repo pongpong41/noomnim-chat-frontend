@@ -6,7 +6,9 @@
         <mat-list-item (click)="onSelectGroup(group)">
           <div class="group">
             <div>{{group.name}}</div>
-            <button mat-button class="btn" (click)="onLeaveGroup(group)">X</button>
+            <button mat-icon-button class="btn" (click)="onLeaveGroup($event, group)">
+              <mat-icon>remove</mat-icon>
+            </button>
           </div>
         </mat-list-item>
         <mat-divider></mat-divider>

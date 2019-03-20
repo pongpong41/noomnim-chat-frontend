@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Kanit|Open+Sans|PT+Sans|Pridi');
 @import url('@angular/material/prebuilt-themes/indigo-pink.css');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 body {
   margin: 0px;

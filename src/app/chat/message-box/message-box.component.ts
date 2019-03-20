@@ -21,4 +21,8 @@ export class MessageBoxComponent implements OnInit {
       this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
     } catch (err) { }
   }
+
+  onExitGroup() {
+    this.chatService.setCurrentGroup();
+  }
 }

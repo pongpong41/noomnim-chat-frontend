@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatListModule, MatSidenavModule, MatTooltipModule } from '@angular/material';
+import {
+  MatButtonModule, MatFormFieldModule, MatInputModule, MatListModule, MatSidenavModule, MatTooltipModule, MatIconModule
+} from '@angular/material';
 import { SocketIoModule } from 'ngx-socket-io';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -42,6 +44,7 @@ import { SectionHeaderComponent } from './chat/section-header/section-header.com
     MatButtonModule,
     MatFormFieldModule,
     MatListModule,
+    MatIconModule,
     MatInputModule,
     MatTooltipModule,
     MatSidenavModule,
