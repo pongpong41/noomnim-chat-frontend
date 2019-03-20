@@ -18,7 +18,6 @@ export class MessageBoxComponent implements OnInit {
 
   scrollToBottom(): void {
     try {
-      console.log('checked');
       this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
     } catch (err) { }
   }
