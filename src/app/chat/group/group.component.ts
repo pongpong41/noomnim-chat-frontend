@@ -30,6 +30,13 @@ export class GroupComponent implements OnInit {
   ngOnInit() {
   }
 
+  groupStyle(groupId: number) {
+    if (this.chatService.currentGroup) {
+      return { selected: groupId === this.chatService.currentGroup.id };
+    }
+    return {};
+  }
+
   onSelectGroup(group: Group) {
     this.chatService.setCurrentGroup(group);
   }

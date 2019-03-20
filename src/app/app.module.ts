@@ -20,6 +20,7 @@ import { MessageBoxComponent } from './chat/message-box/message-box.component';
 import { MessageComponent } from './chat/message-box/message/message.component';
 import { TimePipe } from './time.pipe';
 import { environment } from 'src/environments/environment';
+import { SectionHeaderComponent } from './chat/section-header/section-header.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { environment } from 'src/environments/environment';
     SearchComponent,
     NewMessageComponent,
     MessageComponent,
+    SectionHeaderComponent,
     TimePipe
   ],
   imports: [
