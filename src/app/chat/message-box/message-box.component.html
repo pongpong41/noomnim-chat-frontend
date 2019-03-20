@@ -1,4 +1,4 @@
-<div class="container search">
+<div class="container search" (click)="chatService.clearUnreadMessage()">
   <div *ngIf="!chatService.currentGroup" class="no-group">
     No group selected
   </div>
