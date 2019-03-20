@@ -28,7 +28,7 @@ export class ChatService {
             this.socket.emit('message-ack', {
               clientId: this.userService.user.id,
               groupId: this.currentGroup.id,
-              messageId: this.messages[this.messages.length - 1].id
+              messageId: response.data.id
             });
           }
         }
