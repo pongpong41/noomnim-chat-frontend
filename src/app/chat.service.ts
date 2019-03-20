@@ -51,4 +51,13 @@ export class ChatService {
   getUnreadMessage(groupId: number) {
     this.socket.emit('get-unread', { clientId: this.userService.user.id, groupId });
   }
+
+  clearUnreadMessage() {
+    if (this.currentGroup) {
+      this.messages = this.messages.filter(msg => (
+        msg.group_id !== this.currentGroup.id ||
+        (msg.group_id === this.currentGroup.id && Number.isInteger(msg.id))
+      ));
+    }
+  }
 }

@@ -17,4 +17,8 @@ export class MessageComponent {
   get isOwner(): boolean {
     return this.message.posted_by.id === this.userService.user.id;
   }
+
+  get isUnreadMessage(): boolean {
+    return this.message.id % 1 !== 0;
+  }
 }

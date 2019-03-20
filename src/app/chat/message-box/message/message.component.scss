@@ -5,6 +5,19 @@ $message-pad: 100px;
   padding: 0 12px;
 }
 
+.message-unread {
+  margin: 12px;
+  padding: 0;
+  text-align: center;
+  background-color: rgba(153, 153, 153, 0.15);
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, .1);
+}
+
+.unread-label {
+  color: rgba(153,153,153,0.9);
+}
+
 .client-label {
   font-size: 12px;
   color: #999;
