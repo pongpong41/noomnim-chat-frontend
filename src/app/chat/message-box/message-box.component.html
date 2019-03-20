@@ -4,8 +4,11 @@
   </div>
   <div *ngIf="chatService.currentGroup" class="group-message">
     <app-section-header [title]="chatService.currentGroup.name"></app-section-header>
-    <app-message *ngFor="let message of chatService.filterMessage(chatService.currentGroup.id)" [message]="message">
-    </app-message>
-    <app-new-message></app-new-message>
+    <div #scrollMe class="box">
+      <app-message *ngFor="let message of chatService.filterMessage(chatService.currentGroup.id)" [message]="message">
+      </app-message>
+    </div>
+
+    <app-new-message class="footer" (newMessage)="scrollToBottom()"></app-new-message>
   </div>
 </div>

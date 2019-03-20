@@ -10,13 +10,15 @@
   <mat-form-field class="spacing" color="accent">
     <input matInput placeholder="Search" id="search" [(ngModel)]="keys" (keyup.enter)="onSearchGroup()">
   </mat-form-field>
-  <mat-list>
-    <div *ngFor="let group of groups">
-      <mat-list-item class="group">
-        <p mat-line>{{group.name}}</p>
-        <button mat-stroked-button (click)="onJoinGroup(group.id)">Join</button>
-      </mat-list-item>
-      <mat-divider></mat-divider>
-    </div>
-  </mat-list>
+  <div class="list-container">
+    <mat-list>
+      <div *ngFor="let group of groups">
+        <mat-list-item class="group">
+          <p mat-line>{{group.name}}</p>
+          <button mat-stroked-button (click)="onJoinGroup(group.id)">Join</button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-list>
+  </div>
 </div>
