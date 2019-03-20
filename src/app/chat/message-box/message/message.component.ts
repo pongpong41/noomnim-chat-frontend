@@ -19,6 +19,6 @@ export class MessageComponent {
   }
 
   get isUnreadMessage(): boolean {
-    return this.message.id % 1 !== 0;
+    return !Number.isInteger(this.message.id);
   }
 }

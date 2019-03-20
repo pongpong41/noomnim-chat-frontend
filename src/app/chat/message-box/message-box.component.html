@@ -3,12 +3,12 @@
     No group selected
   </div>
   <div *ngIf="chatService.currentGroup" class="group-message">
-    <app-section-header [title]="chatService.currentGroup.name"></app-section-header>
+    <app-section-header [title]="chatService.currentGroup.name" rightIcon="close" (clickRightIcon)="onExitGroup()">
+    </app-section-header>
     <div #scrollMe class="box">
       <app-message *ngFor="let message of chatService.filterMessage(chatService.currentGroup.id)" [message]="message">
       </app-message>
     </div>
-
     <app-new-message class="footer" (newMessage)="scrollToBottom()"></app-new-message>
   </div>
 </div>

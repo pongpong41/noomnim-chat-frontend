@@ -41,11 +41,12 @@ export class GroupComponent implements OnInit {
     this.chatService.setCurrentGroup(group);
   }
 
-  onLeaveGroup(group: Group) {
+  onLeaveGroup(event: any, group: Group) {
+    event.stopPropagation();
     this.error = '';
     this.groupService.leaveGroup(this.userService.user.id, group.id);
-    if (this.chatService.currentGroup === group) {
-      this.chatService.setCurrentGroup(null);
+    if (this.chatService.currentGroup.id === group.id) {
+      this.chatService.setCurrentGroup();
     }
   }
 }
