@@ -4,7 +4,7 @@
 body {
   margin: 0px;
   font-family: 'Open Sans', Pridi, serif;
-  background-color: #f5faff;
+  background-color: #f2ffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -12,39 +12,28 @@ h1, h2, h3, h4, h5, h6 {
   margin: 16px 0;
 }
 
-
 .spacing {
   padding: 10px;
   width: 90%;
 }
 
-.grid-container {
-  display: grid;
-  grid-column-gap: 0px;
-  grid-template-columns: auto auto auto auto;
-  grid-template-columns: auto auto auto;
-  width: 100vw;
-  height: 94vh;
-  margin-top: 6vh;
-}
-
-.container{
+.container {
   height: 100%;
 }
 
-.section-header{
+.section-header {
   margin: 0;
   padding: 5px 10px;
   font-weight: bold;
 }
 
-.group-component{
+.group-component {
   padding: 15px 10px;
   border-style: solid;
   border-width: 0px 0px 1px 0px;
   border-color: #333;
 }
 
-.list-container{
-  overflow: scroll;
+.list-container {
+  overflow: auto;
 }

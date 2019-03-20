@@ -1,13 +1,20 @@
-<div class="header-nav">
-  <div>
-    <div id="title">Chatroom</div>
+<div class="container">
+  <div class="header-nav">
+    <div id="title">Noomnim Chat</div>
     <div id="nav-user-info">
       User <span id="nav-user-name">{{userService.user.name}}</span>
     </div>
   </div>
-</div>
-<div class="grid-container">
-  <app-chat-group></app-chat-group>
-  <app-message-box></app-message-box>
-  <app-chat-search></app-chat-search>
+
+  <mat-drawer-container class="example-container" fixedInViewport=false>
+    <mat-drawer mode="side" opened>
+      <app-chat-group></app-chat-group>
+    </mat-drawer>
+    <mat-drawer mode="side" opened position="end">
+      <app-chat-search></app-chat-search>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-message-box></app-message-box>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </div>
