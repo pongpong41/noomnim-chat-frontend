@@ -3,7 +3,7 @@
     No group selected
   </div>
   <div *ngIf="chatService.currentGroup" class="group-message">
-    <p class="section-header">{{chatService.currentGroup.name}}</p>
+    <div class="section-header">{{chatService.currentGroup.name}}</div>
     <app-message *ngFor="let message of chatService.filterMessage(chatService.currentGroup.id)" [message]="message">
     </app-message>
     <app-new-message></app-new-message>

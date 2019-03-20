@@ -13,6 +13,10 @@
   background-color: #FFCED4;
 }
 
+.group-item.selected {
+  background-color: #FFCED4;
+}
+
 .section-header {
   text-align: center;
 }

@@ -14,9 +14,15 @@
 }
 
 .section-header {
+  height: 32px;
   position: sticky;
   top: 0;
   padding: 8px;
   text-align: center;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: #ccc;
+  border-width: 0 0 0.5px 0;
+  border-style: solid;
+  vertical-align: middle;
+  line-height: 32px;
 }
