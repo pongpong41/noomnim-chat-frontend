@@ -1,8 +1,17 @@
 $message-pad: 100px;
 
+.message-box {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0;
+}
+
 .message {
-  margin: 12px $message-pad 12px 0;
   padding: 0 12px;
+  width: fit-content;
+  min-width: 200px;
+  padding: 0 12px;
+  max-width: 420px;
 }
 
 .message-unread {
@@ -29,10 +38,12 @@ $message-pad: 100px;
   padding: 8px 8px 8px 20px;
   border-radius: 0 20px 20px 20px;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, .1);
+  word-wrap: break-word;
 }
 
-.message.owner {
-  margin: 12px 0 12px $message-pad;
+.message-box.owner {
+  margin: 12px 0;
+  align-items: flex-end;
   .client-label {
     text-align: right;
   }
