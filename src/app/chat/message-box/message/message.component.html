@@ -1,6 +1,9 @@
 <div class="message" [class.owner]="isOwner" *ngIf="!isUnreadMessage">
-  <div class="client-label">{{message.posted_by.name}}</div>
-  <div class="message-content" [matTooltip]="message.time | time">{{message.content}}</div>
+  <app-profile-img class="profile-img" [name]="message.posted_by.name" size=40></app-profile-img>
+  <div class="message-text">
+    <div class="client-label">{{message.posted_by.name}}</div>
+    <div class="message-content" [matTooltip]="message.time | time">{{message.content}}</div>
+  </div>
 </div>
 <div class="message-unread" *ngIf="isUnreadMessage">
   <div class="unread-label">Unread messages</div>

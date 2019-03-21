@@ -1,8 +1,9 @@
 <div class="container">
   <div class="header-nav">
     <div>Noomnim Chat</div>
-    <div>
+    <div class="header-nav-right">
       Logging in as: {{userService.user.name}}
+      <app-profile-img [name]="userService.user.name"></app-profile-img>
     </div>
   </div>
 
