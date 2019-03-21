@@ -22,8 +22,8 @@
 
 .image-background {
   position: absolute;
-  bottom: 20px;
-  width: 200px;
-  opacity: 0.8;
-  transform: scaleX(-1);
+  bottom: 30px;
+  right: 50px;
+  width: 250px;
+  opacity: 0.6;
 }
