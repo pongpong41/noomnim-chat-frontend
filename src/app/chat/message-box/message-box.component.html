@@ -9,6 +9,7 @@
       <app-message *ngFor="let message of chatService.filterMessage(chatService.currentGroup.id)" [message]="message">
       </app-message>
     </div>
-    <app-new-message class="footer" (newMessage)="scrollToBottom()"></app-new-message>
+
+    <app-new-message (newMessage)="scrollToBottom()"></app-new-message>
   </div>
 </div>
