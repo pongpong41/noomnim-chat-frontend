@@ -8,7 +8,7 @@ import { ChatService } from 'src/app/chat.service';
   styleUrls: ['./message-box.component.css']
 })
 export class MessageBoxComponent implements OnInit {
-  @ViewChild('scrollMe') private myScrollContainer: ElementRef;
+  @ViewChild('scrollMe', { static: false }) private myScrollContainer: ElementRef;
 
   constructor(public userService: UserService, public chatService: ChatService) { }
 
