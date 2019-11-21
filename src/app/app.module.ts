@@ -52,7 +52,9 @@ import { SectionHeaderComponent } from './chat/section-header/section-header.com
     MatInputModule,
     MatTooltipModule,
     MatSidenavModule,
-    SocketIoModule.forRoot({ url: environment.apiUrl }),
+    environment.production ?
+      SocketIoModule.forRoot({ url: undefined, options: { path: '/api/socket.io' } }) :
+      SocketIoModule.forRoot({ url: environment.apiUrl }),
     FormsModule,
     HttpClientModule
   ],

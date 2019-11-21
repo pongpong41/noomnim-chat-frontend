@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
+import { resolve } from 'url';
 import { User } from './user';
 import { SocketResponse, HTTPResponse } from './response';
 import { Group } from './group';
@@ -38,7 +39,7 @@ export class UserService {
   }
 
   groupUpdate() {
-    this.http.get<HTTPResponse<Group[]>>(environment.apiUrl + '/user/group?clientId=' + this.user.id).subscribe((res) => {
+    this.http.get<HTTPResponse<Group[]>>(resolve(environment.apiUrl, 'user/group?clientId=' + this.user.id)).subscribe((res) => {
       this.groups = res.data;
     });
   }

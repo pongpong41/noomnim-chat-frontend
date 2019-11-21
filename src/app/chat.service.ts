@@ -7,6 +7,7 @@ import { Message } from './message';
 import { Observable } from 'rxjs';
 import { Group } from './group';
 import { environment } from 'src/environments/environment';
+import { resolve } from 'url';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +45,7 @@ export class ChatService {
   }
 
   sendMessage(content: string): Observable<HTTPResponse<Message>> {
-    return this.http.post<HTTPResponse<Message>>(environment.apiUrl + '/message', {
+    return this.http.post<HTTPResponse<Message>>(resolve(environment.apiUrl, 'message'), {
       content, clientId: this.userService.user.id, groupId: this.currentGroup.id
     });
   }
