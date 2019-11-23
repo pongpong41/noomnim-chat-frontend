@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Kanit|Open+Sans|PT+Sans|Pridi');
 @import url('@angular/material/prebuilt-themes/indigo-pink.css');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import './variables.scss';
 
 body {
   margin: 0px;
@@ -11,6 +12,24 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'PT Sans', Kanit, serif;
   margin: 16px 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.red-button {
+  background-color: $red-color;
+  color: #fff;
+}
+
+.blue-button {
+  background-color: $blue-color;
+  color: #fff;
+}
+
+.error-text {
+  color: $red-color;
 }
 
 .spacing {

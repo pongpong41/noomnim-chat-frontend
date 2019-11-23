@@ -14,12 +14,6 @@
   width: 100%;
 }
 
-.btn {
-  min-height: 36px;
-  background-color: #fc8f9d;
-  color: #fff;
-}
-
 .image-background {
   position: absolute;
   bottom: 30px;

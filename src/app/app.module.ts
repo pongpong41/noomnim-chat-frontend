@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -27,6 +28,7 @@ import { MessageComponent } from './chat/message-box/message/message.component';
 import { TimePipe } from './time.pipe';
 import { environment } from 'src/environments/environment';
 import { SectionHeaderComponent } from './chat/section-header/section-header.component';
+import { AddGroupDialogComponent } from './chat/add-group-dialog/add-group-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +41,15 @@ import { SectionHeaderComponent } from './chat/section-header/section-header.com
     NewMessageComponent,
     MessageComponent,
     SectionHeaderComponent,
-    TimePipe
+    TimePipe,
+    AddGroupDialogComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatListModule,
     MatIconModule,
@@ -54,7 +58,7 @@ import { SectionHeaderComponent } from './chat/section-header/section-header.com
     MatSidenavModule,
     environment.production ?
       SocketIoModule.forRoot({ url: undefined, options: { path: '/api/socket.io' } }) :
-      SocketIoModule.forRoot({ url: environment.apiUrl }),
+      SocketIoModule.forRoot({ url: 'http://localhost', options: { path: '/api/socket.io' } }),
     FormsModule,
     HttpClientModule
   ],
@@ -63,6 +67,9 @@ import { SectionHeaderComponent } from './chat/section-header/section-header.com
     GroupService,
     ChatService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    AddGroupDialogComponent
+  ]
 })
 export class AppModule { }

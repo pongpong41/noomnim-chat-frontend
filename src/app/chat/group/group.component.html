@@ -1,5 +1,5 @@
 <div class="chat-group">
-  <app-section-header title="My Groups"></app-section-header>
+  <app-section-header title="My Groups" leftIcon="add" (clickLeftIcon)="addGroup()"></app-section-header>
   <mat-list class="container groups">
     <mat-list>
       <div class="group-item" *ngFor="let group of userService.groups" [ngClass]="groupStyle(group.id)">
