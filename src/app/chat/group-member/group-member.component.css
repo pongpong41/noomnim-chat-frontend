@@ -1,4 +1,4 @@
-.container{
+/* .container{
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -17,7 +17,7 @@
 .image-background {
   position: absolute;
   bottom: 30px;
-  left: 50px;
+  right: 50px;
   width: 250px;
   opacity: 0.6;
-}
+} */

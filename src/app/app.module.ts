@@ -20,7 +20,9 @@ import { UserService } from './user.service';
 import { ChatComponent } from './chat/chat.component';
 import { SearchComponent } from './chat/search/search.component';
 import { GroupComponent } from './chat/group/group.component';
+import { GroupMemberComponent } from './chat/group-member/group-member.component';
 import { GroupService } from './group.service';
+import { GroupMemberService } from './group-member.service';
 import { NewMessageComponent } from './chat/message-box/new-message/new-message.component';
 import { ChatService } from './chat.service';
 import { MessageBoxComponent } from './chat/message-box/message-box.component';
@@ -38,6 +40,7 @@ import { AddGroupDialogComponent } from './chat/add-group-dialog/add-group-dialo
     GroupComponent,
     MessageBoxComponent,
     SearchComponent,
+    GroupMemberComponent,
     NewMessageComponent,
     MessageComponent,
     SectionHeaderComponent,
@@ -65,7 +68,8 @@ import { AddGroupDialogComponent } from './chat/add-group-dialog/add-group-dialo
   providers: [
     UserService,
     GroupService,
-    ChatService
+    ChatService,
+    GroupMemberService
   ],
   bootstrap: [AppComponent],
   entryComponents: [

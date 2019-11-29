@@ -1,0 +1,19 @@
+<div class="container search">
+  <img src="assets/rabbit.png" class="image-background">
+  <div class="error-text">{{error}}</div>
+
+  <mat-form-field class="spacing" color="accent">
+    <input matInput placeholder="Search" id="search" [(ngModel)]="keys" (keyup.enter)="onSearchGroupMember()">
+  </mat-form-field>
+  <div class="list-container">
+    <mat-list>
+      <div *ngFor="let member of members">
+        <mat-list-item class="member">
+          <p mat-line>{{member.name}}</p>
+          <!-- <button mat-stroked-button (click)="onJoinGroup(group.id)">Join</button> -->
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-list>
+  </div>
+</div>
