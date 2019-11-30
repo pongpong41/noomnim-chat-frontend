@@ -39,3 +39,11 @@
   font-weight: bold;
   color: #fc687c;
 }
+
+.image-background {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  width: 250px;
+  opacity: 0.6;
+}

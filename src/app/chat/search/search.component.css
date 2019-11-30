@@ -13,11 +13,3 @@
   background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
 }
-
-.image-background {
-  position: absolute;
-  bottom: 30px;
-  left: 50px;
-  width: 250px;
-  opacity: 0.6;
-}
