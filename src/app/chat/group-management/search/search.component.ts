@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Group } from '../../group';
-import { GroupService } from '../../group.service';
+import { Group } from '../../../group';
+import { GroupService } from '../../../group.service';
 import { UserService } from 'src/app/user.service';
 
 @Component({

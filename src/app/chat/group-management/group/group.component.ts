@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { UserService } from '../../user.service';
-import { Group } from '../../group';
+import { UserService } from '../../../user.service';
+import { Group } from '../../../group';
 import { GroupService } from 'src/app/group.service';
 import { ChatService } from 'src/app/chat.service';
 import { SocketResponse } from 'src/app/response';
 import { Socket } from 'ngx-socket-io';
-import { AddGroupDialogComponent } from '../add-group-dialog/add-group-dialog.component';
+import { AddGroupDialogComponent } from '../../add-group-dialog/add-group-dialog.component';
 
 @Component({
   selector: 'app-chat-group',
