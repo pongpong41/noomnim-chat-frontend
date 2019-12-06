@@ -1,16 +1,28 @@
-.container{
+.group-member {
   display: flex;
   flex-direction: column;
-  width: 300px;
   box-sizing: border-box;
-  align-items: center;
-  background-color: #ffffff;
 }
 
-.line {
-  margin-top: 16px;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
+.container {
+  background-color: #ffffff;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+.member-item {
+  cursor: default;
+  transition-duration: 0.3s;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 

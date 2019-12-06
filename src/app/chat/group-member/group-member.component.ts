@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { GroupMemberService } from '../../group-member.service';
 import { User } from '../../user';
+import { Group } from 'src/app/group';
+import { GroupMemberService } from '../../group-member.service';
+import { ChatService } from 'src/app/chat.service';
 
 @Component({
   selector: 'app-chat-group-member',
@@ -8,14 +10,7 @@ import { User } from '../../user';
   styleUrls: ['./group-member.component.css']
 })
 export class GroupMemberComponent {
-  groupId = '';
-  members?: User[];
 
-  constructor(private groupMemberService: GroupMemberService) { }
-
-  onSearchGroupMember() {
-    this.groupMemberService.getMember(this.groupId).subscribe((res) => {
-      this.members = res.data;
-    });
-  }
+  constructor(private groupMemberService: GroupMemberService,
+              public chatService: ChatService) { }
 }
