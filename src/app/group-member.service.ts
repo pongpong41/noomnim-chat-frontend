@@ -19,7 +19,7 @@ export class GroupMemberService {
     if (this.currentId === groupId) { return this.members; }
     this.currentId = groupId;
     if (groupId) {
-      this.http.get<HTTPResponse<Group[]>>(resolve(environment.apiUrl, 'group/members?keys=' + groupId)).subscribe((res) => {
+      this.http.get<HTTPResponse<Group[]>>(resolve(environment.apiUrl, 'group/members?groupId=' + groupId)).subscribe((res) => {
         this.members = res.data;
       });
     } else {
