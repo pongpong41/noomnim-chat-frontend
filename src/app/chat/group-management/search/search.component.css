@@ -5,6 +5,7 @@
   box-sizing: border-box;
   align-items: center;
   background-color: #ffffff;
+  height: auto;
 }
 
 .line {
