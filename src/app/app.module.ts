@@ -31,6 +31,7 @@ import { TimePipe } from './time.pipe';
 import { environment } from 'src/environments/environment';
 import { SectionHeaderComponent } from './chat/section-header/section-header.component';
 import { AddGroupDialogComponent } from './chat/add-group-dialog/add-group-dialog.component';
+import { GroupManagementComponent } from './chat/group-management/group-management.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AddGroupDialogComponent } from './chat/add-group-dialog/add-group-dialo
     MessageComponent,
     SectionHeaderComponent,
     TimePipe,
-    AddGroupDialogComponent
+    AddGroupDialogComponent,
+    GroupManagementComponent
   ],
   imports: [
     AppRoutingModule,

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { SearchComponent } from './search/search.component';
-import { GroupComponent } from './group/group.component';
 
 @Component({
   selector: 'app-chat-group-management',
@@ -9,4 +7,4 @@ import { GroupComponent } from './group/group.component';
 })
 export class GroupManagementComponent {
   constructor() {}
-  }
+}
