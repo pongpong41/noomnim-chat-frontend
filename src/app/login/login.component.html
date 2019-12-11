@@ -2,10 +2,10 @@
   <h1>Login</h1>
   <h3>Noomnim Chat</h3>
 
-  {{error}}
-  <mat-form-field class="spacing">
+  <mat-form-field class="full-width">
     <input matInput placeholder="Name" id="username" [(ngModel)]="name" (keyup.enter)="onLogin()" required autofocus>
   </mat-form-field>
+  <div class="error-text">{{error}}</div>
 
-  <button mat-raised-button class="btn spacing" (click)="onLogin()">Sign In</button>
+  <button mat-raised-button class="blue-button btn full-width" (click)="onLogin()">Sign In</button>
 </div>

@@ -1,0 +1,16 @@
+<div class="group-member">
+  <img src="assets/rabbit.png" class="image-background">
+  <app-section-header title="Group Members"></app-section-header>
+  <mat-list class="container members">
+    <mat-list *ngIf="chatService.currentGroup" >
+      <div class="member-item" *ngFor="let member of groupMemberService.members">
+        <mat-list-item>
+          <div class="member">
+            <div>{{member.name}}</div>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-list>
+  </mat-list>
+</div>

@@ -17,14 +17,11 @@ h1, h3 {
   margin-top: 0;
 }
 
-.spacing {
+.full-width {
   margin-top: 12px;
-  width: 100%;
 }
 
 .btn {
   padding: 4px 16px;
   text-transform: uppercase;
-  background-color: #a3d1d1;
-  color: #ffffff
 }

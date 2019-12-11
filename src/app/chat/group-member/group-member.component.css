@@ -1,0 +1,35 @@
+.group-member {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #ffffff;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+.member-item {
+  cursor: default;
+  transition-duration: 0.3s;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.image-background {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  width: 250px;
+  opacity: 0.6;
+}

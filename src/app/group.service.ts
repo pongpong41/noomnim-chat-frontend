@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
+import { resolve } from 'url';
 import { Group } from './group';
 import { SocketResponse, HTTPResponse } from './response';
 import { Observable } from 'rxjs';
@@ -37,6 +38,10 @@ export class GroupService {
   }
 
   getGroup(keys: string): Observable<HTTPResponse<Group[]>> {
-    return this.http.get<HTTPResponse<Group[]>>(environment.apiUrl + '/group?keys=' + keys);
+    return this.http.get<HTTPResponse<Group[]>>(resolve(environment.apiUrl, 'group?keys=' + keys));
+  }
+
+  searchGroup(keys: string): Observable<HTTPResponse<Group[]>> {
+    return this.http.get<HTTPResponse<Group[]>>(resolve(environment.apiUrl, 'group/search?keys=' + keys));
   }
 }

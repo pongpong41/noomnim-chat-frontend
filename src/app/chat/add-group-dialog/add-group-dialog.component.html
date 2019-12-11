@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Create New Group</h1>
+<div mat-dialog-content>
+  <mat-form-field color="accent" class="full-width">
+    <input matInput placeholder="Name" [(ngModel)]="name" (keyup.enter)="onCreateGroup()">
+  </mat-form-field>
+  <div class="error-text">{{error}}</div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button class="red-button" (click)="onCreateGroup()" [disabled]="isLoading">Create</button>
+</div>

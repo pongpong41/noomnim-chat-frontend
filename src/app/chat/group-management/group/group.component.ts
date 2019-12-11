@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../user.service';
-import { Group } from '../../group';
+import { MatDialog } from '@angular/material/dialog';
+import { UserService } from '../../../user.service';
+import { Group } from '../../../group';
 import { GroupService } from 'src/app/group.service';
 import { ChatService } from 'src/app/chat.service';
 import { SocketResponse } from 'src/app/response';
 import { Socket } from 'ngx-socket-io';
+import { AddGroupDialogComponent } from '../../add-group-dialog/add-group-dialog.component';
 
 @Component({
   selector: 'app-chat-group',
@@ -17,7 +19,8 @@ export class GroupComponent implements OnInit {
   constructor(public userService: UserService,
               private groupService: GroupService,
               private socket: Socket,
-              private chatService: ChatService) {
+              private chatService: ChatService,
+              private dialog: MatDialog) {
     this.leaveGroupRes.subscribe(msg => {
       if (msg.data) {
         this.userService.groupUpdate();
@@ -48,5 +51,11 @@ export class GroupComponent implements OnInit {
     if (this.chatService.currentGroup.id === group.id) {
       this.chatService.setCurrentGroup();
     }
+  }
+
+  addGroup() {
+    this.dialog.open(AddGroupDialogComponent, {
+      width: '400px'
+    });
   }
 }

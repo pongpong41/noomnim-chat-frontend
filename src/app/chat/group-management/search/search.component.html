@@ -1,11 +1,5 @@
 <div class="container search">
-  <img src="assets/rabbit.png" class="image-background">
-  {{error}}
-  <mat-form-field class="spacing" color="accent">
-    <input matInput placeholder="New Group" id="new-group" [(ngModel)]="name" (keyup.enter)="onCreateGroup()">
-  </mat-form-field>
-  <button mat-raised-button class="btn spacing" (click)="onCreateGroup()">Create New Group</button>
-  <div class="line"></div>
+  <div class="error-text">{{error}}</div>
 
   <mat-form-field class="spacing" color="accent">
     <input matInput placeholder="Search" id="search" [(ngModel)]="keys" (keyup.enter)="onSearchGroup()">

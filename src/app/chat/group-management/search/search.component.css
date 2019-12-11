@@ -5,6 +5,7 @@
   box-sizing: border-box;
   align-items: center;
   background-color: #ffffff;
+  height: auto;
 }
 
 .line {
@@ -12,18 +13,4 @@
   height: 1px;
   background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
-}
-
-.btn {
-  min-height: 36px;
-  background-color: #fc8f9d;
-  color: #fff;
-}
-
-.image-background {
-  position: absolute;
-  bottom: 30px;
-  right: 50px;
-  width: 250px;
-  opacity: 0.6;
 }

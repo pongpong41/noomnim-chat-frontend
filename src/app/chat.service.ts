@@ -7,6 +7,8 @@ import { Message } from './message';
 import { Observable } from 'rxjs';
 import { Group } from './group';
 import { environment } from 'src/environments/environment';
+import { resolve } from 'url';
+import { GroupMemberService } from './group-member.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,8 @@ export class ChatService {
   messages: Message[] = [];
   currentGroup?: Group;
 
-  constructor(private socket: Socket, private http: HttpClient, private userService: UserService) {
+  constructor(private socket: Socket, private http: HttpClient, private userService: UserService,
+              private groupMemberService: GroupMemberService) {
     this.messageObservable.subscribe(response => {
       if (response.data) {
         if (this.currentGroup && this.currentGroup.id === response.data.group_id) {
@@ -40,11 +43,14 @@ export class ChatService {
     this.currentGroup = group;
     if (group) {
       this.getUnreadMessage(group.id);
+      this.groupMemberService.getMembers(group.id);
+    } else {
+      this.groupMemberService.getMembers();
     }
   }
 
   sendMessage(content: string): Observable<HTTPResponse<Message>> {
-    return this.http.post<HTTPResponse<Message>>(environment.apiUrl + '/message', {
+    return this.http.post<HTTPResponse<Message>>(resolve(environment.apiUrl, 'message'), {
       content, clientId: this.userService.user.id, groupId: this.currentGroup.id
     });
   }
